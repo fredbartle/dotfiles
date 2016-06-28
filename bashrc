@@ -52,4 +52,4 @@ export EDITOR=vim
 bind '"\e[A":history-search-backward'
 bind '"\e[B":history-search-forward'
 
-export PS1='${M}\u${D}@${Y}deneb ${R}\t${D} ${G}\w${D} $(__git_ps1 "Git(${B}%s${D})$(git_dirty)")\n$ '
+export PS1='${M}\u${D}@${Y}\h ${R}\t${D} ${G}\w${D} $(__git_ps1 "Git(${B}%s${D})$(git_dirty)")\n$ '
