@@ -1,22 +1,27 @@
-if has('vim_starting')
+if &compatible
   set nocompatible               " Be iMproved
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-call neobundle#begin(expand('/Users/fredb/.vim/bundle'))
+" Required:
+set runtimepath+=~/.vim/bundle/neobundle.vim/
 
+" Required:
+call neobundle#begin(expand('/Users/fredbartle/.vim/bundle'))
+
+" Let NeoBundle manage NeoBundle
 " Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Add or remove your Bundles here:
-NeoBundle 'mileszs/ack.vim'
-NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'tpope/vim-sensible'
+NeoBundle 'ctrlpvim/ctrlp.vim'
+NeoBundle 'flazz/vim-colorschemes'
+NeoBundle 'mileszs/ack.vim'
+NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'christoomey/vim-tmux-navigator'
-" NeoBundle 'davidhalter/jedi-vim'
 
 " Required:
 call neobundle#end()
