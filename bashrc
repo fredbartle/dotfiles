@@ -13,7 +13,7 @@ D=$'\e[0m'      # clear
 git_dirty() {
     git_status="$(git status 2> /dev/null)"
     branch_pattern="On branch ([^${IFS}]*)"
-    remote_pattern="Your branch is (.*) of"
+    remote_pattern="Your branch is (.*) by"
     diverge_pattern="Your branch and (.*) have diverged"
     if [[ ! ${git_status} =~ "working directory clean" ]]; then
         state="${R}⚡${D}"
