@@ -134,6 +134,7 @@ autocmd bufenter * match ErrorMsg /\s\+$/
 
 "allow :W saves
 command! W w
+command! Wq wq
 
 set clipboard=unnamed
 
