@@ -1,0 +1,13 @@
+" no status bar
+set laststatus=0
+
+" search
+set ignorecase
+set smartcase
+set gdefault
+set incsearch
+set showmatch
+set hlsearch
+set wrap
+set wrapscan
+
