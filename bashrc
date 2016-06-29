@@ -16,22 +16,22 @@ git_dirty() {
     remote_pattern="Your branch is (.*) of"
     diverge_pattern="Your branch and (.*) have diverged"
     if [[ ! ${git_status} =~ "working directory clean" ]]; then
-        state="${R}⚡"
+        state="${R}⚡${D}"
     else
-        state="${G}✓"
+        state="${G}✓${D}"
     fi
     if [[ ${git_status} =~ ${remote_pattern} ]]; then
         if [[ ${BASH_REMATCH[1]} == "ahead" ]]; then
-            remote="${Y}↑"
+            remote="${Y}↑${D}"
         else
-            remote="${Y}↓"
+            remote="${Y}↓${D}"
         fi
     fi
     if [[ ${git_status} =~ ${diverge_pattern} ]]; then
         remote="${Y}↕"
     fi
     if [[ ${git_status} =~ ${branch_pattern} ]]; then
-        echo "${remote}${state}${D}"
+        echo "${state}${remote}"
     fi
 }
 
@@ -42,9 +42,10 @@ alias fetch='curl -O'
 alias vi='vim -v'
 alias vim='vim -v'
 alias tmux='TERM=screen-256color-bce tmux'
+alias g='git'
 
-source /usr/local/etc/bash_completion/git-completion.bash
-source /usr/local/etc/bash_completion/git-prompt.sh
+source /usr/local/etc/bash_completion.d/git-completion.bash
+source /usr/local/etc/bash_completion.d/git-prompt.sh
 
 export CLICOLOR=1
 export EDITOR=vim
@@ -52,4 +53,4 @@ export EDITOR=vim
 bind '"\e[A":history-search-backward'
 bind '"\e[B":history-search-forward'
 
-export PS1='${M}\u${D}@${Y}\h ${R}\t${D} ${G}\w${D} $(__git_ps1 "Git(${B}%s${D})$(git_dirty)")\n$ '
+export PS1='${M}\u${D}@${Y}\h${D} ${B}\t${D} ${G}\w${D} $(__git_ps1 "${C}[${D} ${B}%s${D} $(git_dirty) ${C}]${D}")\n$ '
