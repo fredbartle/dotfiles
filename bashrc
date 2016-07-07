@@ -42,10 +42,11 @@ alias fetch='curl -O'
 alias vi='vim -v'
 alias vim='vim -v'
 alias tmux='TERM=screen-256color-bce tmux'
-alias g='git'
 
 source /usr/local/etc/bash_completion.d/git-completion.bash
 source /usr/local/etc/bash_completion.d/git-prompt.sh
+alias g='git'
+__git_complete g __git_main
 
 export CLICOLOR=1
 export EDITOR=vim
