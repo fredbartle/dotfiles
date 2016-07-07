@@ -42,6 +42,8 @@ alias fetch='curl -O'
 alias vi='vim -v'
 alias vim='vim -v'
 alias tmux='TERM=screen-256color-bce tmux'
+alias rce='vim ~/.bashrc'
+alias rcs='source ~/.bashrc'
 
 source /usr/local/etc/bash_completion.d/git-completion.bash
 source /usr/local/etc/bash_completion.d/git-prompt.sh
